@@ -1,12 +1,17 @@
 //jshint esversion:6
-require('dotenv').db();
+require('dotenv').config();
 const express = require("express");
 const mongoose = require("mongoose");
+const literatureRouter = require('./src/routes/literatureRoutes');
+
+
+
+
 const app = express();
 
 
 //db config
-const db = require("./db/config").MongoURI;
+const db = require('./src/config/key').MongoURI;
 
 
 //connect to mongoose
@@ -22,6 +27,10 @@ app.get("/api", function(req, res){
 res.status(200).json({message: "Welcome to my first api"});
 });
 
+app.use("/Africa", literatureRouter);
+
+
+ 
 
 
 
@@ -31,6 +40,6 @@ res.status(200).json({message: "Welcome to my first api"});
 
 
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3000
 
 app.listen(PORT, console.log("server started on" + " " + PORT));

@@ -1,7 +1,7 @@
 //jshint esversion:6
 const mongoose = require("mongoose");
 
-const LiteratureSchema = new mongoose.Schema({
+const BookSchema = new mongoose.Schema({
     
 bookTitle: {
     type: String,
@@ -14,7 +14,7 @@ authorName: {
 },
 
 published: {
-    type: string,
+    type: String,
     required: true
 },
 
@@ -42,5 +42,5 @@ country: {
 
 
 
-const Literature = mongoose.model('Literature', LiteratureSchema);
-module.exports = Literature;
+const Book = mongoose.model('Book', BookSchema);
+module.exports = Book;
