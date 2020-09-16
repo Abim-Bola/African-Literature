@@ -1,4 +1,5 @@
 //jshint esversion:6
+// todo: check out eslint intead
 require('dotenv').config();
 const express = require("express");
 const mongoose = require("mongoose");
@@ -15,10 +16,12 @@ const db = require('./src/config/key').MongoURI;
 
 
 //connect to mongoose
-mongoose.connect(db, {useNewUrlParser: true, useUnifiedTopology: true})
+ mongoose.connect(db, {useNewUrlParser: true, useUnifiedTopology: true})
 .then(() => console.log("mongo connected"))
 .catch(err => console.log(err));
 
+
+// callback => promises => async/await
 
 //body parser
 app.use(express.urlencoded({extended: false}));
@@ -31,8 +34,17 @@ app.use("/Africa", literatureRouter);
 
 
 
-const PORT = process.env.PORT || 3000
+// const PORT = process.env.PORT || 3000
 
-app.listen(PORT, console.log("server started on" + " " + PORT));
+// app.listen(PORT, console.log("server started on" + " " + PORT));
 
-module.exports = app;
+module.exports = {
+    init: async() => {
+        await mongoose.connect(db, {useNewUrlParser: true, useUnifiedTopology: true})
+        console.log("mongo connected");
+        return app;
+    },
+    shutdown: async() => {
+        await mongoose.disconnect();
+    }
+}
