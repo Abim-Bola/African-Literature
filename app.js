@@ -15,7 +15,7 @@ const db = require('./src/config/key').MongoURI;
 
 
 //connect to mongoose
-mongoose.connect(db, {useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect(db, {useNewUrlParser: true, useUnifiedTopology: true})
 .then(() => console.log("mongo connected"))
 .catch(err => console.log(err));
 
@@ -24,22 +24,15 @@ mongoose.connect(db, {useNewUrlParser: true, useUnifiedTopology: true })
 app.use(express.urlencoded({extended: false}));
 
 app.get("/api", function(req, res){
-res.status(200).json({message: "Welcome to my first api"});
+res.status(200).json({message: "Welcome to African Literature api. An api that provides data of literature in Africa."});
 });
 
 app.use("/Africa", literatureRouter);
-
-
- 
-
-
-
-
-
-
 
 
 
 const PORT = process.env.PORT || 3000
 
 app.listen(PORT, console.log("server started on" + " " + PORT));
+
+module.exports = app;
