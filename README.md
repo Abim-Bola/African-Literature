@@ -21,5 +21,5 @@ This api was created using:
 * Jest and supertest 
 
 # Links
-Heroku Link: https://grapefruitblog.herokuapp.com/ <br/>
+Heroku Link: https://africa-literature-api-project.herokuapp.com/ <br/>
 Documentation of Api: https://documenter.getpostman.com/view/11641738/TVKBXcyA
