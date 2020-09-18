@@ -7,8 +7,7 @@ The African Literature api is one that provides data on literature in Africa. It
 * Can be used for your book reading app, etc.
 
 # Accessing the API 
-Make a get request to http://Africa/Literature for all the literature in the api.<br/>
-Make a post request to http://Africa/add-Literature
+Make a get request to https://africa-literature-api-project.herokuapp.com/africa/literature for all the literature in the api.<br/>
 
 # Technology
 This api was created using:
