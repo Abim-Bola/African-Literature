@@ -26,7 +26,7 @@ const db = require('./src/config/key').MongoURI;
 //body parser
 app.use(express.urlencoded({extended: false}));
 
-app.get("/africa-literature-api-project", function(req, res){
+app.get("/", function(req, res){
 res.status(200).json({message: "Welcome to African Literature api. An api that provides data of literature in Africa."});
 });
 
