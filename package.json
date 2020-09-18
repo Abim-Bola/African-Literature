@@ -2,10 +2,9 @@
   "name": "AfricaLiterature",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
-    "test": "jest",
-    "start:dev": "nodemon ./index.js"
+    "test": "jest"
   },
   "keywords": [],
   "author": "",
